@@ -5,7 +5,7 @@
 
   axios.get('https://api.github.com/users/curm90')
     .then(response => {
-      console.log(response.data);
+      githubCardComponent(response);
     })
     .catch(err => {
       console.log(err);
@@ -68,8 +68,9 @@ function githubCardComponent(response) {
   following.textContent = response.data.following;
   bio.textContent = `Bio: ${response.data.bio}`;
 
+  // Append all elements to DOM
   const cardsContainer = document.querySelector('.cards');
-  cardsContainer.container.appendChild(profileCard);
+  cardsContainer.appendChild(profileCard);
   profileCard.appendChild(profileImg);
   profileCard.appendChild(cardInfo);
   cardInfo.appendChild(cardH3);
