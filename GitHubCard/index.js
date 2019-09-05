@@ -34,7 +34,7 @@
 
 const followersArray = [];
 
-function githubCardComponent(profileData) {
+function githubCardComponent(response) {
   // Create all elements needed for component
   const profileCard = document.createElement('div');
   const profileImg = document.createElement('img');
@@ -67,6 +67,22 @@ function githubCardComponent(profileData) {
   followers.textContent = response.data.followers;
   following.textContent = response.data.following;
   bio.textContent = `Bio: ${response.data.bio}`;
+
+  const cardsContainer = document.querySelector('.cards');
+  cardsContainer.container.appendChild(profileCard);
+  profileCard.appendChild(profileImg);
+  profileCard.appendChild(cardInfo);
+  cardInfo.appendChild(cardH3);
+  cardInfo.appendChild(username);
+  cardInfo.appendChild(location);
+  cardInfo.appendChild(profile);
+  profile.appendChild(profileLink);
+  cardInfo.appendChild(followers);
+  cardInfo.appendChild(following);
+  cardInfo.appendChild(bio);
+
+  // Return component
+  return profileCard;
 }
 
 /* Step 3: Create a function that accepts a single object as its only argument,
