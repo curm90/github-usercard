@@ -56,7 +56,17 @@ function githubCardComponent(profileData) {
 
   // Add paths to image and profile link
   profileImg.src = response.data.avatar_url;
-  profileLink.href = response.data.html_url
+  profileLink.href = response.data.html_url;
+
+  // Add text content to elements
+  cardH3.textContent = response.data.name;
+  username.textContent = response.data.login;
+  location.textContent = `Location: ${response.data.location}`;
+  profile.textContent = 'Profile:';
+  profileLink.textContent = response.data.html_url;
+  followers.textContent = response.data.followers;
+  following.textContent = response.data.following;
+  bio.textContent = `Bio: ${response.data.bio}`;
 }
 
 /* Step 3: Create a function that accepts a single object as its only argument,
