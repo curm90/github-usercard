@@ -35,6 +35,7 @@
 const followersArray = [];
 
 function githubCardComponent(profileData) {
+  // Create all elements needed for component
   const profileCard = document.createElement('div');
   const profileImg = document.createElement('img');
   const cardInfo = document.createElement('div');
@@ -46,6 +47,12 @@ function githubCardComponent(profileData) {
   const followers = document.createElement('p');
   const following = document.createElement('p');
   const bio = document.createElement('p');
+
+  // Add classes to components
+  profileCard.classList.add('card');
+  cardInfo.classList.add('card-info');
+  cardH3.classList.add('name');
+  username.classList.add('username');
 }
 
 /* Step 3: Create a function that accepts a single object as its only argument,
